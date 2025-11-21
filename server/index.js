@@ -60,6 +60,8 @@ function checkAuthAtStaticLoginAndSignup(req , res , next){
 
 
 
+
+
 server.use(express.json()); //For JSON Data Parsing from HTTP Request Body
 server.use(express.urlencoded({extended : false}));//For Form Data Parsing from 
 server.use(cookieParser()); //third party middle ware to access the cookie from the header of the HTTP request.

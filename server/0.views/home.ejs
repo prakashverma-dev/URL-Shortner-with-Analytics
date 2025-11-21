@@ -184,7 +184,7 @@
             <label>Shortened URL:</label>
             <input 
                 type="text" 
-                value="http://localhost:<%= PORT %>/url/<%= shortenerId %>" 
+                value="<%= baseUrl %>/url/<%= shortenerId %>" 
                 id="shortURL" 
                 readonly
             >
@@ -222,9 +222,10 @@
 
                             <td>
                                 <a 
-                                    href="http://localhost:<%= PORT %>/url/<%= item.shortenerId %>" 
+                                    href="<%= baseUrl %>/url/<%= item.shortenerId %>" 
                                     target="_blank">
-                                    http://localhost:<%= PORT %>/url/<%= item.shortenerId %>
+
+                                    <%= baseUrl %>/url/<%= item.shortenerId %>
                                 </a>
                             </td>
 

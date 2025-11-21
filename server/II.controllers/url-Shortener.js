@@ -1,4 +1,4 @@
-require('dotenv').config();
+
 const ShortUniqueId = require('short-unique-id');
 const { randomUUID } = new ShortUniqueId({ length: 8 });
 
@@ -29,9 +29,13 @@ async function handleGenerateShortenerID(req, res) {
         })
     
         const allDocs = await urlModel.find();
-    
+
+        //Adding this function to get current protocol and host -        
+        const baseUrl = req.protocol + "://" + req.get("host")
+        // console.log(baseUrl)
+
         // return res.status(200).json({generated_Id : id})
-        return res.render('home.ejs', {shortenerId : id, allDocs : allDocs , PORT : process.env.PORT}); //we send addition data to UI side for rendering all these data there aprat from 'home.ejs' which is required and 2nd parameter is optional.
+        return res.render('home.ejs', {shortenerId : id, allDocs : allDocs , baseUrl : baseUrl}); //we send addition data to UI side for rendering all these data there aprat from 'home.ejs' which is required and 2nd parameter is optional. 
 
 
     }catch(err){
