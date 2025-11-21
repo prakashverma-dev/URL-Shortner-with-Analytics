@@ -1,11 +1,10 @@
 {
-  "name": "project_02",
+  "name": "url_shortener_app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "cd server && node index.js"
   },
   "keywords": [],
   "author": "",
