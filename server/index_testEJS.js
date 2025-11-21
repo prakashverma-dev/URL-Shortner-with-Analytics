@@ -51,7 +51,7 @@ function verifyToken(req, res, next){
 
             // res.redirect('/login');
             // res.json({masg : "Invalid TOken"}) 
-             res.render("Login.ejs", {loginErr : "Please Login!"})      
+             res.render("login.ejs", {loginErr : "Please Login!"})      
          }
 
 }

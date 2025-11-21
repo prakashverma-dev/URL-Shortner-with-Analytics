@@ -7,14 +7,14 @@ const jwt = require("jsonwebtoken");
     try {
 
         const fetchUserToken = req.cookies.jwtToken;
-        if(!fetchUserToken) return res.render("Login.ejs", {loginErr : "Please Login!"})
+        if(!fetchUserToken) return res.render("login.ejs", {loginErr : "Please Login!"})
     
     
         //If that user has jwt token, then we will verify that token with our jwt library if it fake token or not, then only we allow to access homepage of application -
     
         const verifyUserToken = jwt.verify(fetchUserToken, process.env.SECRET_KEY);
     
-        if(!verifyUserToken) return res.render("Login.ejs", {loginErr : "Please Login, Wrong JWT Token Found In the Cookie! "});
+        if(!verifyUserToken) return res.render("login.ejs", {loginErr : "Please Login, Wrong JWT Token Found In the Cookie! "});
     
         //if everything went fine, We store that user in http headers of the client with a key name(for identifying that user indivisually) -
     
@@ -26,7 +26,7 @@ const jwt = require("jsonwebtoken");
     } catch (error) {
         console.log("Error", error);
     
-        return res.render("Login.ejs", {loginErr : "Something Went Wrong at the Server side i.e 500 C ode.. Please Login!"})
+        return res.render("login.ejs", {loginErr : "Something Went Wrong at the Server side i.e 500 C ode.. Please Login!"})
         
     }
     

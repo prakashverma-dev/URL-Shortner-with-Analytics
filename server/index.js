@@ -27,7 +27,7 @@ function checkAuthAtStaticLoginAndSignup(req , res , next){
         if(!fetchToken) {
             
             
-            return res.render("Login.ejs", {loginErr : "Please Login!"})
+            return res.render("login.ejs", {loginErr : "Please Login!"})
         
 
         }else{
@@ -52,7 +52,7 @@ function checkAuthAtStaticLoginAndSignup(req , res , next){
     } catch (error) {
         console.log("Error", error);
     
-        return res.render("Login.ejs", {loginErr : "Please Login!"})
+        return res.render("login.ejs", {loginErr : "Please Login!"})
         
     }
 }
