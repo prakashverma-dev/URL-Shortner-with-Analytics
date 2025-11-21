@@ -32,7 +32,7 @@ staticRouter.get("/login", async (req, res) => {
 //HomePage UI API -
 staticRouter.get("/", async (req, res)=> {
 
-    res.render('Home.ejs');
+    res.render('home.ejs'); 
 
   //res.render('Home.ejs', {allDocs : allDocs, PORT : PORT }); //We can send a single object with key-value pair or only value.
     
